@@ -6,11 +6,23 @@
     (org.apache.thrift.transport TSocket)
     (org.apache.thrift.protocol TBinaryProtocol)))
 
-(defn col [cf c] (let [cp (ColumnPath. cf)]
-                (.setColumn cp (.getBytes c)) cp))
+(defn col
+  "A function that creates a correctly formatted ColumnPath object
+  from the column family and the column
+  Arugments:
+    cf - a String, the ColumnFamily
+    c - a String, the Column
+  Returns
+    cp - a ColumnPath Object
+  Example:
+    (col 'my-column-family' 'my-column')
+  "
+  ^ColumnPath [^String cf ^String c]
+  (let [cp (ColumnPath. cf)]
+    (.setColumn cp (.getBytes c)) cp))
 
 (def levels (let [cls (org.apache.cassandra.thrift.ConsistencyLevel/values)
-                  words (map #(.toString %)  cls)]
+                  words (map #(.toString %) cls)]
               (zipmap (map #(keyword (.toLowerCase %)) words) (map #(org.apache.cassandra.thrift.ConsistencyLevel/valueOf %) words))))
 
 (defn connect-to
