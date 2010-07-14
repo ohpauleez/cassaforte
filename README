@@ -1,0 +1,36 @@
+# cassaforte
+
+Cassaforte is wrapper for the Cassandra thrift API.
+It's built around the following design and engineering goals:
+1.) Allows users raw access to the Thrift API in an idiomatic way.
+2.) Use the abstractions from (1) to create a more abstracted interface.
+3.) Provide one implementation for (2), but allow users to easily adapt their own implementation
+4.) Decouple the implementations and interfaces such that changes to Thrift API won't break old code
+      and will make it easier, if not automatic, to extend the interface to use new API features.
+
+This code makes use of Clojure 1.2 features.
+
+All dependencies are bundled, but you can optionally use the Cassandra-encouraged UUID:
+   http://wiki.apache.org/cassandra/FAQ#working_with_timeuuid_in_java
+
+
+Design decisions and implementation hints were taken from the following projects:
+cassandra-wrapper: http://github.com/antoniogarrote/cassandra-wrapper
+clj-cassandra: http://github.com/robertluo/clj-cassandra
+and to some degree,
+toga: http://github.com/trptcolin/toga
+
+
+## Usage
+
+FIXME: write
+
+## Installation
+
+Leiningen: [cassaforte "0.1-SNAPSHOT"]
+
+
+## License
+Copyright (C) 2010 Paul deGrandis. All rights reserved.
+Distributed under the MIT License; see the file LICENSE at the root of this distribution.
+
