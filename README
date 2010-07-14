@@ -10,7 +10,7 @@ It's built around the following design and engineering goals:
 
 This code makes use of Clojure 1.2 features.
 
-All dependencies are bundled, but you can optionally use the Cassandra-encouraged UUID:
+All dependencies will be bundled, including the Cassandra-encouraged UUID:
    http://wiki.apache.org/cassandra/FAQ#working_with_timeuuid_in_java
 
 
@@ -27,6 +27,7 @@ FIXME: write
 
 ## Installation
 
+TODO:
 Leiningen: [cassaforte "0.1-SNAPSHOT"]
 
 
