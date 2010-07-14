@@ -2,3 +2,13 @@ pom.xml
 *jar
 lib
 classes
+*.orig
+*~
+*.o
+*.class
+.*.swp
+.*.swo
+.DS_Store
+*.tmp
+*.log
+
