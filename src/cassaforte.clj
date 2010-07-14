@@ -27,8 +27,8 @@
   `(let [client# (connect-to ~host ~port)]
      (fn [method# & args#]
        (let [m# (.getMethod Cassandra$Client method# (into-array Class (map type args#)))
-             a# args#]
-         (println client# m# a#)
-         (. client# m# (into-array Object a#))
-         (.m# client# (into-array Object a#))))))
+             a# (into-array Object args#)]
+         (println client# m# args#)
+         #_(. client# m# a#)
+         #_(.m# client# a#)))))
 
