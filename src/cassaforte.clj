@@ -21,7 +21,9 @@
   (let [cp (ColumnPath. cf)]
     (.setColumn cp (.getBytes c)) cp))
 
-(def levels (let [cls (org.apache.cassandra.thrift.ConsistencyLevel/values)
+;; TODO Consider making this a record with defrecord (for speed and type reflection)
+(def #^{:doc "Create a map of the consistency levels automatically {:level LEVEL-VAL}"}
+  levels (let [cls (org.apache.cassandra.thrift.ConsistencyLevel/values)
                   words (map #(.toString %) cls)]
               (zipmap (map #(keyword (.toLowerCase %)) words) (map #(org.apache.cassandra.thrift.ConsistencyLevel/valueOf %) words))))
 
@@ -65,6 +67,9 @@
          (println client# m# args#)
          #_(. client# m# a#)
          #_(.m# client# a#)))))
+
+(def #^{:doc "A map of {:method-name method-as-func} used to create and extend the Cassandra protocol"}
+  client-method-map {})
 
 (defmacro client2
   "

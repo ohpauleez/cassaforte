@@ -64,8 +64,8 @@ bindkey ^[O5D prev
 ########################
 #bindkey ^[[1~ ^A
 #bindkey ^[[4~ ^E
-bindkey -k kh ^A # Home is beg line
-bindkey -k kH ^E # End of the line
+#bindkey -k kh ^A # Home is beg line
+#bindkey -k kH ^E # End of the line
 #bindkey ^[O2A [[5~ # Shift up is also page up
 #bindkey ^[O2B [[6~ # Shift up is also page up
 #
@@ -77,9 +77,9 @@ chdir ./src
 screen -t vim 3
 chdir ../
 screen -t repl 4
+chdir ../
 screen -t scratch 5
 chdir $HOME
-screen -t home 11
-chdir $HOME
+screen -t home 6
 select 0
 
