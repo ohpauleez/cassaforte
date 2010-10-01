@@ -1,5 +1,7 @@
 # cassaforte
 
+This is a work in progress that is not getting much attention.
+
 Cassaforte is wrapper for the Cassandra thrift API.
 It's built around the following design and engineering goals:
 1.) Allows users raw access to the Thrift API in an idiomatic way.
